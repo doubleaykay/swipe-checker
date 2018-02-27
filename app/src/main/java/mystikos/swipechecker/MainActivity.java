@@ -4,6 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import java.lang.reflect.Array;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         time = getTime(); //store time at launch of app as integer variable
         day = getDay(); //store day at launch of app as integer variable
 
-        checkSwipeValue(time); //method to return meal swipe value; gets passed the time int
+        checkSwipeValue(); //method to return meal swipe value
 
         checkFoco(); //check if Foco is open
         checkNovack(); //check if Novack is open
@@ -38,15 +41,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private int getTime() {
-        return 5; //TODO add code to get 24hr time as an int
+        DateFormat df = new SimpleDateFormat("HHmm");
+        String t = df.format(Calendar.getInstance().getTime());
+        return Integer.parseInt(t);
     }
 
     private String getDay() {
-        return "Test"; //TODO add code to get current day as string
+        DateFormat df = new SimpleDateFormat("EEE");
+        String d = df.format(Calendar.getInstance().getTime());
+        return d;
     }
 
-    private void checkSwipeValue(int time) {
-        //TODO add code to check swipe value based on
+    private void checkSwipeValue() {
+        //TODO
     }
 
     private void checkFoco() {
