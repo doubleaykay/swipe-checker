@@ -2,6 +2,7 @@ package mystikos.swipechecker;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import java.lang.reflect.Array;
 import java.text.DateFormat;
@@ -14,17 +15,29 @@ public class MainActivity extends AppCompatActivity {
     private int time;
     private String day;
 
+    //declare day and time textviews
+    private TextView JtextDay;
+    private TextView JtextTime;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        JtextDay = (TextView) findViewById(R.id.textDay);
+        JtextTime = (TextView) findViewById(R.id.textTime);
+
         run(); //call run method
     }
 
     private void run() {//method that calls everything else; can be called by pull to refresh
-        time = getTime(); //store time at launch of app as integer variable
         day = getDay(); //store day at launch of app as integer variable
+        time = getTime(); //store time at launch of app as integer variable
+
+        //TEMP
+        JtextDay.setText(day);
+        JtextTime.setText(String.valueOf(time));
+        //END TEMP
 
         checkSwipeValue(); //method to return meal swipe value
 
