@@ -1,7 +1,9 @@
 package mystikos.swipechecker;
 
+import android.support.annotation.IntRange;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Range;
 import android.widget.TextView;
 
 import java.lang.reflect.Array;
@@ -18,14 +20,17 @@ public class MainActivity extends AppCompatActivity {
     //declare day and time textviews
     private TextView JtextDay;
     private TextView JtextTime;
+    private TextView JtextSwipeValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //find textviews
         JtextDay = (TextView) findViewById(R.id.textDay);
         JtextTime = (TextView) findViewById(R.id.textTime);
+        JtextSwipeValue = (TextView) findViewById(R.id.textSwipeValue);
 
         run(); //call run method
     }
@@ -55,18 +60,35 @@ public class MainActivity extends AppCompatActivity {
 
     private int getTime() {
         DateFormat df = new SimpleDateFormat("HHmm");
-        String t = df.format(Calendar.getInstance().getTime());
-        return Integer.parseInt(t);
+        String t = df.format(Calendar.getInstance().getTime());//get 24 hour time with no colon
+        return Integer.parseInt(t);//return time as int
     }
 
     private String getDay() {
-        DateFormat df = new SimpleDateFormat("EEE");
-        String d = df.format(Calendar.getInstance().getTime());
-        return d;
+        DateFormat df = new SimpleDateFormat("EEEE");
+        String d = df.format(Calendar.getInstance().getTime());//get full name of day
+        return d;//return day as string
     }
 
-    private void checkSwipeValue() {
-        //TODO
+    public static boolean between(int i, int min, int max) {//check if int provided is within provided range. https://alvinalexander.com/java/java-method-integer-is-between-a-range
+        if (i >= min && i <= max)
+            return true;
+        else
+            return false;
+    }
+
+    private void checkSwipeValue() {//check if time variable is between certain ranges
+        if (between(time, 700, 1059)){
+            JtextSwipeValue.setText("$5.25");//breakfast
+        } else if (between(time, 2100, 2400)){
+            JtextSwipeValue.setText("$5.25");//latenight 1
+        } else if (between(time, 0, 700)){
+            JtextSwipeValue.setText("$5.25");//latenight 2
+        } else if (between(time, 1100, 1559)){
+            JtextSwipeValue.setText("$7.75");//lunch
+        } else if (between(time, 1600, 2059)){
+            JtextSwipeValue.setText("$10.00");//dinner
+        }
     }
 
     private void checkFoco() {
