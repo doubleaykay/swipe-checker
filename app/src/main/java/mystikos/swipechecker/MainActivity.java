@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         JtextTime.setText(String.valueOf(time));
         //END TEMP
 
+        title(); //method to set title of activity to date
+
         checkSwipeValue(); //method to return meal swipe value
 
         checkFoco(); //check if Foco is open
@@ -68,6 +70,11 @@ public class MainActivity extends AppCompatActivity {
         DateFormat df = new SimpleDateFormat("EEEE");
         String d = df.format(Calendar.getInstance().getTime());//get full name of day
         return d;//return day as string
+    }
+
+    private void title (){ //gets date in the format of "Monday, January 1"
+        DateFormat df = new SimpleDateFormat("EEEE, MMMM d");
+        setTitle(df.format(Calendar.getInstance().getTime()));
     }
 
     public static boolean between(int i, int min, int max) {//check if int provided is within provided range. https://alvinalexander.com/java/java-method-integer-is-between-a-range
