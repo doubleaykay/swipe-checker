@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">swipechecker</string>
+    <string name="CardTitle">Meal Swipe Value:</string>
 </resources>
