@@ -31,8 +31,14 @@ public class MainActivity extends AppCompatActivity {
         JtextDay = (TextView) findViewById(R.id.textDay);
         JtextTime = (TextView) findViewById(R.id.textTime);
         JtextSwipeValue = (TextView) findViewById(R.id.textSwipeValue);
+    }
 
-        run(); //call run method
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        // load data
+        run();
     }
 
     private void run() {//method that calls everything else; can be called by pull to refresh
