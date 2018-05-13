@@ -112,13 +112,17 @@ public class MainActivity extends AppCompatActivity {
 
     private void checkFoco() {
         if(day.equals("Saturday") || day.equals("Sunday")){
-            // insert saturday and sunday times
+            if (between(time, toTime(8, 00), toTime(14,30))){
+
+            } else if (between(time, toTime(17, 00), toTime(20,30))){
+
+            }
         } else {
-            if (between(time, 730, 1030)){
+            if (between(time, toTime(7, 30), toTime(10,30))){
 
-            } else if (between(time, 2100, 2400)){ //TODO change times here
+            } else if (between(time, toTime(11, 00), toTime(15,00))){
 
-            } else if (between(time, 0, 700)){ //TODO change times here
+            } else if (between(time, toTime(17, 00), toTime(20,30))){
 
             }
         }
