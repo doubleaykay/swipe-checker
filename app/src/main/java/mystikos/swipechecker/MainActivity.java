@@ -190,5 +190,7 @@ public class MainActivity extends AppCompatActivity {
                 //TODO collis closed
             }
         }
+
+        //TODO COLLIS LATE NIGHT HOURS
     }
 }
