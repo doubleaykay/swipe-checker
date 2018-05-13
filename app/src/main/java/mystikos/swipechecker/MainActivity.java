@@ -133,7 +133,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void checkKAF() {
-        //TODO
+        if(day.equals("Saturday") || day.equals("Sunday")){
+            //TODO add code to say that KAF is closed on weekends
+        } else {
+            if (between(time, toTime(8, 00), toTime(17,00))){
+
+            } else {
+                //TODO add code to say that KAF is closed
+            }
+        }
     }
 
     private void checkHop() {
