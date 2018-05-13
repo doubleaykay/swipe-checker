@@ -58,12 +58,7 @@ public class MainActivity extends AppCompatActivity {
         checkNovack(); //check if Novack is open
         checkKAF(); //check if KAF is open
         checkHop(); //check if Hop is open
-
-        if(day.equals("Saturday") || day.equals("Sunday")){
-            //code to print that Collis is closed
-        } else {
-            checkCollis();
-        }
+        checkCollis(); //check if Collis is open
     }
 
     private int getTime() {
