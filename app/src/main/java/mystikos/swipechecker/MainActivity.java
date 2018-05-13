@@ -128,21 +128,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void checkNovack() {
-        if(day.equals("Saturday")) {
-            if (between(time, toTime(13, 00), toTime(14, 00))) {
-                // TODO novack open
+        if (between(time, toTime(00, 00), toTime(2, 00))) {
+            // novack open
+        }
+        else if(day.equals("Saturday")) {
+            if (between(time, toTime(13, 00), toTime(24, 00))) {
+                // novack open
             } else {
                 // TODO novack closed
             }
         } else if (day.equals("Sunday")) {
-            if (between(time, toTime(11, 00), toTime(14, 00))) {
-                // TODO novack open
+            if (between(time, toTime(11, 00), toTime(24, 00))) {
+                // novack open
             } else {
                 // TODO novack closed
             }
         } else {
-            if (between(time, toTime(7, 30), toTime(14, 00))) {
-                // TODO novack open
+            if (between(time, toTime(7, 30), toTime(24, 00))) {
+                // novack open
             } else {
                 // TODO novack closed
             }
@@ -162,7 +165,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void checkHop() {
-        //TODO
+        if(day.equals("Saturday") || day.equals("Sunday")) {
+            if (between(time, toTime(10, 30), toTime(24, 00))) {
+                // TODO hop open
+            } else {
+                // TODO hop closed
+            }
+        } else {
+            if (between(time, toTime(8, 00), toTime(24, 00))) {
+                // TODO hop open
+            } else {
+                // TODO hop closed
+            }
+        }
     }
 
     private void checkCollis() {
