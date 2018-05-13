@@ -58,12 +58,7 @@ public class MainActivity extends AppCompatActivity {
         checkNovack(); //check if Novack is open
         checkKAF(); //check if KAF is open
         checkHop(); //check if Hop is open
-
-        if(day.equals("Saturday") || day.equals("Sunday")){
-            //code to print that Collis is closed
-        } else {
-            checkCollis();
-        }
+        checkCollis(); //check if Collis is open
     }
 
     private int getTime() {
@@ -116,6 +111,8 @@ public class MainActivity extends AppCompatActivity {
 
             } else if (between(time, toTime(17, 00), toTime(20,30))){
 
+            } else {
+                //TODO foco closed
             }
         } else {
             if (between(time, toTime(7, 30), toTime(10,30))){
@@ -124,6 +121,8 @@ public class MainActivity extends AppCompatActivity {
 
             } else if (between(time, toTime(17, 00), toTime(20,30))){
 
+            } else {
+                //TODO foco closed
             }
         }
     }
@@ -136,25 +135,33 @@ public class MainActivity extends AppCompatActivity {
             if (between(time, toTime(13, 00), toTime(24, 00))) {
                 // novack open
             } else {
-                // novack closed
+                // TODO novack closed
             }
         } else if (day.equals("Sunday")) {
             if (between(time, toTime(11, 00), toTime(24, 00))) {
                 // novack open
             } else {
-                // novack closed
+                // TODO novack closed
             }
         } else {
             if (between(time, toTime(7, 30), toTime(24, 00))) {
                 // novack open
             } else {
-                // novack closed
+                // TODO novack closed
             }
         }
     }
 
     private void checkKAF() {
-        //TODO
+        if(day.equals("Saturday") || day.equals("Sunday")){
+            //TODO closed
+        } else {
+            if (between(time, toTime(8, 00), toTime(17,00))){
+
+            } else {
+                //TODO KAF closed
+            }
+        }
     }
 
     private void checkHop() {
