@@ -167,15 +167,15 @@ public class MainActivity extends AppCompatActivity {
     private void checkHop() {
         if(day.equals("Saturday") || day.equals("Sunday")) {
             if (between(time, toTime(10, 30), toTime(24, 00))) {
-                // hop open
+                // TODO hop open
             } else {
-                // hop closed
+                // TODO hop closed
             }
         } else {
             if (between(time, toTime(8, 00), toTime(24, 00))) {
-                // hop open
+                // TODO hop open
             } else {
-                // hop closed
+                // TODO hop closed
             }
         }
     }
