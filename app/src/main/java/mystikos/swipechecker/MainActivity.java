@@ -116,6 +116,8 @@ public class MainActivity extends AppCompatActivity {
 
             } else if (between(time, toTime(17, 00), toTime(20,30))){
 
+            } else {
+                //TODO foco closed
             }
         } else {
             if (between(time, toTime(7, 30), toTime(10,30))){
@@ -124,6 +126,8 @@ public class MainActivity extends AppCompatActivity {
 
             } else if (between(time, toTime(17, 00), toTime(20,30))){
 
+            } else {
+                //TODO foco closed
             }
         }
     }
@@ -131,33 +135,33 @@ public class MainActivity extends AppCompatActivity {
     private void checkNovack() {
         if(day.equals("Saturday")) {
             if (between(time, toTime(13, 00), toTime(14, 00))) {
-                // novack open
+                // TODO novack open
             } else {
-                // novack closed
+                // TODO novack closed
             }
         } else if (day.equals("Sunday")) {
             if (between(time, toTime(11, 00), toTime(14, 00))) {
-                // novack open
+                // TODO novack open
             } else {
-                // novack closed
+                // TODO novack closed
             }
         } else {
             if (between(time, toTime(7, 30), toTime(14, 00))) {
-                // novack open
+                // TODO novack open
             } else {
-                // novack closed
+                // TODO novack closed
             }
         }
     }
 
     private void checkKAF() {
         if(day.equals("Saturday") || day.equals("Sunday")){
-            //TODO add code to say that KAF is closed on weekends
+            //TODO closed
         } else {
             if (between(time, toTime(8, 00), toTime(17,00))){
 
             } else {
-                //TODO add code to say that KAF is closed
+                //TODO KAF closed
             }
         }
     }
