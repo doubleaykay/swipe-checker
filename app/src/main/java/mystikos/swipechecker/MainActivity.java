@@ -105,7 +105,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void checkFoco() {
-        //TODO
+        if(day.equals("Saturday") || day.equals("Sunday")){
+            // insert saturday and sunday times
+        } else {
+            if (between(time, 730, 1030)){
+
+            } else if (between(time, 2100, 2400)){ //TODO change times here
+
+            } else if (between(time, 0, 700)){ //TODO change times here
+
+            }
+        }
     }
 
     private void checkNovack() {
