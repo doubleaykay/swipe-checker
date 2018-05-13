@@ -129,7 +129,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void checkNovack() {
-        //TODO
+        if(day.equals("Saturday")) {
+            if (between(time, toTime(13, 00), toTime(14, 00))) {
+                // novack open
+            } else {
+                // novack closed
+            }
+        } else if (day.equals("Sunday")) {
+            if (between(time, toTime(11, 00), toTime(14, 00))) {
+                // novack open
+            } else {
+                // novack closed
+            }
+        } else {
+            if (between(time, toTime(7, 30), toTime(14, 00))) {
+                // novack open
+            } else {
+                // novack closed
+            }
+        }
     }
 
     private void checkKAF() {
