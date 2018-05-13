@@ -166,6 +166,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void checkCollis() {
-        //TODO
+        if(day.equals("Saturday") || day.equals("Sunday")){
+            //TODO collis closed
+        } else {
+            if (between(time, toTime(7, 00), toTime(20,00))){
+
+            } else {
+                //TODO collis closed
+            }
+        }
     }
 }
