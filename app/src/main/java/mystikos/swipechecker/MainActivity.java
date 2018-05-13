@@ -67,9 +67,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private int getTime() {
-        DateFormat df = new SimpleDateFormat("HHmm");
-        String t = df.format(Calendar.getInstance().getTime());//get 24 hour time with no colon
-        return Integer.parseInt(t);//return time as int
+        DateFormat mf = new SimpleDateFormat("mm");
+        DateFormat hf = new SimpleDateFormat("HH");
+        int h = Integer.parseInt(hf.format(Calendar.getInstance().getTime()));//get 24 hour time with no colon
+        int m = Integer.parseInt(mf.format(Calendar.getInstance().getTime()));//get 24 hour time with no colon
+        return toTime(h, m); //return time as int
+    }
+
+    private int toTime(int h, int m) {
+        return (h * 60) + m; //return time as int
     }
 
     private String getDay() {
@@ -91,15 +97,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void checkSwipeValue() {//check if time variable is between certain ranges
-        if (between(time, 700, 1059)){
+        if (between(time, toTime(7, 0), toTime(10,59))) {
             JtextSwipeValue.setText("$5.25");//breakfast
-        } else if (between(time, 2100, 2400)){
+        } else if (between(time, toTime(21, 00), toTime(24,00))) {
             JtextSwipeValue.setText("$5.25");//latenight 1
-        } else if (between(time, 0, 700)){
+        } else if (between(time, toTime(0, 0), toTime(7, 0))) {
             JtextSwipeValue.setText("$5.25");//latenight 2
-        } else if (between(time, 1100, 1559)){
+        } else if (between(time, toTime(11,00),toTime(15,59))) {
             JtextSwipeValue.setText("$7.75");//lunch
-        } else if (between(time, 1600, 2059)){
+        } else if (between(time, toTime(16,00), toTime(20,59))) {
             JtextSwipeValue.setText("$10.00");//dinner
         }
     }
