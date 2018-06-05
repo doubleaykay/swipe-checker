@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //find textviews
-        JtextDay = (TextView) findViewById(R.id.textDay);
-        JtextTime = (TextView) findViewById(R.id.textTime);
+        //JtextDay = (TextView) findViewById(R.id.textDay);
+        //JtextTime = (TextView) findViewById(R.id.textTime);
         JtextSwipeValue = (TextView) findViewById(R.id.textSwipeValue);
     }
 
@@ -46,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
         time = getTime(); //store time at launch of app as integer variable
 
         //TEMP
-        JtextDay.setText(day);
-        JtextTime.setText(String.valueOf(time));
+        //JtextDay.setText(day);
+        //JtextTime.setText(String.valueOf(time));
         //END TEMP
 
         title(); //method to set title of activity to date
