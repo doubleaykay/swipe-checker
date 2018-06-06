@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         //find textviews
         //JtextDay = (TextView) findViewById(R.id.textDay);
         //JtextTime = (TextView) findViewById(R.id.textTime);
-        JtextSwipeValue = (TextView) findViewById(R.id.textSwipeValue);
+        //JtextSwipeValue = (TextView) findViewById(R.id.textSwipeValue);
     }
 
     @Override
