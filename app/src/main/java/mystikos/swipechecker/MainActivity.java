@@ -93,15 +93,15 @@ public class MainActivity extends AppCompatActivity {
 
     private void checkSwipeValue() {//check if time variable is between certain ranges
         if (between(time, toTime(7, 0), toTime(10,59))) {
-            JtextSwipeValue.setText("$5.25");//breakfast
+            //JtextSwipeValue.setText("$5.25");//breakfast
         } else if (between(time, toTime(21, 00), toTime(24,00))) {
-            JtextSwipeValue.setText("$5.25");//latenight 1
+            //JtextSwipeValue.setText("$5.25");//latenight 1
         } else if (between(time, toTime(0, 0), toTime(7, 0))) {
-            JtextSwipeValue.setText("$5.25");//latenight 2
+            //JtextSwipeValue.setText("$5.25");//latenight 2
         } else if (between(time, toTime(11,00),toTime(15,59))) {
-            JtextSwipeValue.setText("$7.75");//lunch
+            //JtextSwipeValue.setText("$7.75");//lunch
         } else if (between(time, toTime(16,00), toTime(20,59))) {
-            JtextSwipeValue.setText("$10.00");//dinner
+            //JtextSwipeValue.setText("$10.00");//dinner
         }
     }
 
